@@ -54,7 +54,7 @@ fun TextFieldCustom(
             androidx.compose.material3.Icon(
                 painter = painterResource(id = icon),
                 contentDescription = iconContentDescription,
-                tint = Color.Red
+                tint = Color.Yellow
             )
 
         }
