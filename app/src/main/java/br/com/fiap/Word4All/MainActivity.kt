@@ -9,7 +9,4 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 
 class MainActivity : ComponentActivity() {
-    var username by remember {mutableStateOf ("")}
-    var password by remember {mutableStateOf ("")}
-    var rememberMeCheck by remember {mutableStateOf (false)}
-
+}
