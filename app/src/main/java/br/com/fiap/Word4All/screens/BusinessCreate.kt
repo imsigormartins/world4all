@@ -38,30 +38,30 @@ import br.com.fiap.Word4All.ui.theme.PurpleGrey200
 import br.com.fiap.Word4All.ui.theme.Slate_Blue
 
 @Composable
-fun FormLogin (){
-    var username by remember { mutableStateOf ("")}
+fun BusinessCreate (){
+    var razaosocial by remember { mutableStateOf ("")}
     var password by remember { mutableStateOf ("")}
-    var rememberMeCheck by remember { mutableStateOf (false)}
+    var createMe by remember { mutableStateOf ("")}
+    var cep by remember { mutableStateOf ("")}
 
 
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .fillMaxHeight()
-                .background(
-                    brush = Brush.sweepGradient(
-                        listOf(
-                            Blue_1000,
-                            Blue_600,
-                            Blue_800,
-                            Blue_1000,
-                        )
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .fillMaxHeight()
+            .background(
+                brush = Brush.sweepGradient(
+                    listOf(
+                        Blue_1000,
+                        Blue_600,
+                        Blue_800,
+                        Blue_1000,
                     )
-                ),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally,
-        ){
-
+                )
+            ),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally,
+    ){
         Text(
             text= stringResource(id = R.string.app_name),
             fontSize = 36.sp,
@@ -79,11 +79,12 @@ fun FormLogin (){
             )
         )
 
-        Spacer(modifier = Modifier.padding(0.dp, 0.dp, 0.dp, 50.dp,))
+        Spacer(modifier = Modifier.padding(0.dp, 0.dp, 0.dp, 20.dp,))
 
         AnimatedBorderCard(
             modifier = Modifier
                 .fillMaxWidth()
+                .fillMaxHeight(fraction = 0.9f)
                 .padding(all = 24.dp),
             shape = RoundedCornerShape(38.dp),
             gradient = Brush.sweepGradient(listOf(
@@ -98,65 +99,56 @@ fun FormLogin (){
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 TextFieldCustom(
-                    value = username,
+                    value = razaosocial,
                     onValueChange = {
-                        username = it
+                        razaosocial = it
                     },
-                    hint = stringResource(id = R.string.hint_usarname),
+                    hint = stringResource(id = R.string.hint_razao_social),
                     keyboardOptions = KeyboardOptions(
-                        keyboardType = KeyboardType.Email
+                        keyboardType = KeyboardType.Text
                     ),
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(0.dp, 10.dp)
                 )
 
-                TextFieldCustom(
-                    value = password,
-                    onValueChange = {
-                        password = it
-                    },
-                    hint = stringResource(id = R.string.hint_password),
-                    keyboardOptions = KeyboardOptions(
-                        keyboardType = KeyboardType.NumberPassword
-                    ),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(0.dp, 10.dp),
-                    icon = R.drawable.ic_password
-                )
+                Row(){
+                    TextFieldCustom(
+                        value = password,
+                        onValueChange = {
+                           password = it
+                        },
+                        hint = stringResource(id = R.string.hint_password),
+                        keyboardOptions = KeyboardOptions(
+                            keyboardType = KeyboardType.NumberPassword
+                        ),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(0.dp, 10.dp),
+                        icon = R.drawable.ic_password
+                )}
+                    Spacer(modifier = Modifier.padding(0.dp, 0.dp, 0.dp, 20.dp,))
+                    Row(){
+                        TextFieldCustom(
+                            value = cep,
+                            onValueChange = {
+                                cep = it
+                            },
+                            hint = stringResource(id = R.string.hint_cep),
+                            keyboardOptions = KeyboardOptions(
+                                keyboardType = KeyboardType.Number
+                            ),
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(0.dp, 10.dp),
+                            icon = R.drawable.ic_password
+                    )}
 
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.Center
                 ) {
-
-                    Checkbox(
-                        checked = rememberMeCheck,
-                        onCheckedChange = {
-                            rememberMeCheck = !rememberMeCheck
-                        },
-                        colors = CheckboxDefaults.colors(
-                            checkedColor = Blue_800,
-                            uncheckedColor = Color.Blue,
-                            checkmarkColor = Color.White
-                        )
-
-                    )
-                    Text(
-                        text = stringResource(id = R.string.txt_remember_me),
-                        fontSize = 14.sp,
-                        color = Color.White
-                    )
-
-                    Spacer(modifier = Modifier.padding(20.dp, 0.dp))
-
-                    Text(
-                        text = stringResource(id = R.string.txt_forgot_password),
-                        fontSize = 14.sp,
-                        color = Color.White
-                    )
                 }
 
                 Button(
@@ -173,7 +165,7 @@ fun FormLogin (){
                     shape = RoundedCornerShape(8.dp)
                 ) {
                     Text(
-                        text = stringResource(id = R.string.txt_button_login),
+                        text = stringResource(id = R.string.txt_Create),
                         fontSize = 22.sp
                     )
                 }
@@ -185,6 +177,6 @@ fun FormLogin (){
 
 @Preview
 @Composable
-private fun FormLoginPreview() {
-    FormLogin()
+private fun BusinessCreatePreview() {
+    BusinessCreate()
 }

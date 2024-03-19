@@ -19,6 +19,9 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import br.com.fiap.Word4All.R
+import br.com.fiap.Word4All.ui.theme.Blue_1000
+import br.com.fiap.Word4All.ui.theme.Blue_700
+import br.com.fiap.Word4All.ui.theme.Blue_800
 import br.com.fiap.Word4All.ui.theme.PurpleGrey200
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -41,12 +44,12 @@ fun TextFieldCustom(
             Text(text = hint, color = Color.White)
         },
         colors = TextFieldDefaults.textFieldColors(
-            containerColor = Color.Yellow,
+            containerColor = Blue_800,
             cursorColor = Color.White
         ),
         maxLines = 1,
         textStyle = TextStyle(
-            color = Color.Magenta,
+            color = Color.White,
             fontSize = 18.sp
         ),
         keyboardOptions = keyboardOptions,
@@ -54,7 +57,7 @@ fun TextFieldCustom(
             androidx.compose.material3.Icon(
                 painter = painterResource(id = icon),
                 contentDescription = iconContentDescription,
-                tint = Color.Yellow
+                tint = Color.White
             )
 
         }

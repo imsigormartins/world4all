@@ -24,13 +24,15 @@ import androidx.compose.ui.graphics.drawscope.rotate
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import br.com.fiap.Word4All.ui.theme.Blue_600
+import br.com.fiap.Word4All.ui.theme.Blue_800
 import br.com.fiap.Word4All.ui.theme.Pink40
 import br.com.fiap.Word4All.ui.theme.Purple40
 import br.com.fiap.Word4All.ui.theme.PurpleGrey200
 
 
 @Composable
-fun AnimatedBorderCard(
+public fun AnimatedBorderCard(
     modifier: Modifier = Modifier,
     shape: Shape = RoundedCornerShape(size = 0.dp),
     borderWidth: Dp = 4.dp,
@@ -68,7 +70,7 @@ fun AnimatedBorderCard(
                     }
                     drawContent ()
                 },
-            color =  Red,
+            color =  Blue_600,
             shape = shape
         ){
             content()
