@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Word4All"
 include(":app")
- 
+include(":app:service")
